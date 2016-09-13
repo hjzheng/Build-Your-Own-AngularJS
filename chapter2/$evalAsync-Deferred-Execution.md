@@ -58,7 +58,7 @@ Scope.prototype.$evalAsync = function(expr) {
 ```
 目前我们已经存储好了等待运行的任务，但是还没有真正的运行它们。在脏检查的过程中，我们将实现这一动作：
 首先，我们需要取出队列中所有等待运行的任务并且通过 $eval 的方式执行它们：
-```
+```js
 // src/scope.js
 Scope.prototype.$digest = function() {
     var ttl = 10;
