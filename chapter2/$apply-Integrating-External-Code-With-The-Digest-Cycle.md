@@ -32,7 +32,7 @@ describe('$apply', function () {
     });
 });
 ```
-上面的用例中，我们针对 scope.aValue 设立了一个 watch(监听)，并且在对应的 listener(监听器) 中通过 scope.counter 进行了计数。我们期望当 $apply 方法被调用时，这个监听能立刻被触发。
+上面的用例中，我们针对 scope.aValue 设立了一个 watcher，并且在对应的 listener 函数中通过 scope.counter 进行了计数。我们期望当 $apply 方法被调用时，这个监听能立刻被触发。
 
 为了使我们的测试用例通过，我们可以对 $apply 做一个简单的实现：
 
