@@ -14,9 +14,21 @@ chapter 1
 - [NaNs](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter1/NaNs.md)
 - [Handling Exceptions](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter1/Handling-Exceptions.md)
 - [Destroying A Watch](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter1/Destroying-A-Watch.md)
-- [Summary]()
+- Summary
 
 chapter 2
 
 - [$eval - Evaluating Code In The Context of A Scope](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter2/%24eval-Evaluating-Code-In-The-Context-of-A-Scope.md)
 - [$apply - Integrating External Code With The Digest Cycle](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter2/%24apply-Integrating-External-Code-With-The-Digest-Cycle.md)
+- [$evalAsync - Deferred Execution](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter2/%24evalAsync-Deferred-Execution.md)
+- [Scheduling $evalAsync from Watch Functions](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter2/Scheduling-%24evalAsync-from-Watch-Functions.md)
+
+chapter 3
+
+- [The Root Scope](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/The-Root-Scope.md)
+- [Making A Child Scope](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Making-A-Child-Scope.md)
+- [Attribute Shadowing](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Attribute-Shadowing.md)
+- [Separated Watches](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Separated-Watches.md)
+- [Recursive Digestion](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Recursive-Digestion.md)
+- [Digesting The Whole Tree from $apply, $evalAsync, and $applyAsync](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Digesting-The-Whole-Tree-from-%24apply-%24evalAsync-and-%24applyAsync.md)
+- [Isolated Scopes](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Isolated-Scopes.md)
