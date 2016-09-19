@@ -32,3 +32,6 @@ chapter 3
 - [Recursive Digestion](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Recursive-Digestion.md)
 - [Digesting The Whole Tree from $apply, $evalAsync, and $applyAsync](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Digesting-The-Whole-Tree-from-%24apply-%24evalAsync-and-%24applyAsync.md)
 - [Isolated Scopes](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Isolated-Scopes.md)
+- [Substituting The Parent Scope](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Substituting-The-Parent-Scope.md)
+- [Destroying Scopes](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Destroying-Scope.md)
+- Summary
