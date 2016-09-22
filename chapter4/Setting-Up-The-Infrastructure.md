@@ -16,7 +16,7 @@ Scope.prototype.$watchCollection = function(watchFn, listenerFn) {
 };
 ```
 
-如果你调用 $watchCollection, $watch 函数返回一个用来删除该监听器的函数.
+你或许会想 $watch 函数返回一个具有删除该监听器的函数. 通过返回的函数, $watchCollection 也具备这样的可能.
 
 让我们为测试设置一个 describe 块, 就和之前的章节做的一样.
 
