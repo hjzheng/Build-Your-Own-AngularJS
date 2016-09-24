@@ -76,7 +76,7 @@ var internalWatchFn = function(scope) {
 
 我们使用 LoDash 的 _.forEach 方法遍历新数组. 它为我们提供了每次循的元素和索引. 我们使用索引从旧数组获取相应的元素.
 
-在章节 1 中, 我们看到 NaN 如何成为问题, 因为 NaN 不等于 NaN. 我们已经普通的 watch 中特殊处理了. 同样也得在 watchCollection 中处理:
+在章节 1 中, 我们看到 NaN 是如何成为问题, 因为 NaN 不等于 NaN. 我们已经普通的 watch 中特殊处理了. 同样也得在 watchCollection 中处理:
 
 ```js
 it('does not fail on NaNs in arrays', function() {
@@ -127,4 +127,4 @@ var internalWatchFn = function(scope) {
 };
 ```
 
-当前的实现, 我们可以检测到可能发生在数组上的任何变化, 并且无需复制, 甚至穿越任何嵌套数据结构内的数组.
+当前的实现, 我们可以检测到可能发生在数组上的任何变化, 并且无需复制, 甚至遍历数组内任何嵌套的数据结构.
