@@ -35,3 +35,19 @@ chapter 3
 - [Substituting The Parent Scope](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Substituting-The-Parent-Scope.md)
 - [Destroying Scopes](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter3/Destroying-Scope.md)
 - Summary
+
+chapter 4
+
+- [Setting Up The Infrastructure](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Setting-Up-The-Infrastructure.md)
+- [Detecting Non-Collection Changes](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-Non-Collection-Changes.md)
+- [Detecting New Arrays](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-New-Array.md)
+- [Detecting New Or Removed Items in Arrays](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-New-Or-Removed-Items-in-Arrays.md)
+- [Detecting Replaced or Reordered Items in Arrays](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-Replaced-Or-Reordered-Items-in-Arrays.md)
+- [Array-Like Objects](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Array-Like-Objects.md)
+- [Detecting New Objects](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-New-Objects.md)
+- [Detecting New Or Replaced Attributes in Objects](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-New-Or-Replaced-Attributes-in-Objects.md)
+- [Detecting Removed Attributes in Objects](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Detecting-Removed-Attributes-in-Objects.md)
+- [Preventing Unnecessary Object Iteration](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Preventing-Unnecessary-Object-Iteration.md)
+- [Dealing with Objects that Have A length](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Dealing-with-Objects-that-Have-A-length.md)
+- [Handing The Old Collection Value To Listeners](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Handing-The-Old-Collection-Value-To-Listeners.md)
+- Summary
