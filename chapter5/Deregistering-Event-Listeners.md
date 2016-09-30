@@ -69,7 +69,7 @@ Scope.prototype.$on = function(eventName, listener) {
 然后, 在循环 listener 时, 我们检测 listener 如果为 null, splices listener. 我们要做就是从使用 _.forEach 切换到手动 while 循环.
 
 ```js
-Scope.prototype.$$ reEventOnScope = function(eventName, additionalArgs) {
+Scope.prototype.$$fireEventOnScope = function(eventName, additionalArgs) {
     var event = {name: eventName};
     var listenerArgs = [event].concat(additionalArgs);
     var listeners = this.$$listeners[eventName] || [];
