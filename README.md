@@ -51,3 +51,24 @@ chapter 4
 - [Dealing with Objects that Have A length](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Dealing-with-Objects-that-Have-A-length.md)
 - [Handing The Old Collection Value To Listeners](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter4/Handing-The-Old-Collection-Value-To-Listeners.md)
 - Summary
+
+chapter 5
+
+- [Publish-Subscribe Messaging](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Publish-Subscribe-Messaging.md)
+- [Setup](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Setup.md)
+- [Registering Event Listeners: $on](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Registering-Event-Listeners-%24on.md)
+- [The basics of $emit and $broadcast](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/The-basics-of-%24emit-and-%24broadcast.md)
+- [Dealing with Duplication](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Dealing-with-Duplication.md)
+- [Event Objects](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Event-Objects.md)
+- [Additional Listener Arguments](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Additional-Listener-Arguments.md)
+- [Returning The Event Object](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Returning-The-Event-Object.md)
+- [Deregistering Event Listeners](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Deregistering-Event-Listeners.md)
+- [Emitting Up The Scope Hierarchy](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Emitting-Up-The-Scope-Hierarchy.md)
+- [Broadcasting Down The Scope Hierarchy](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Broadcasting-Down-The-Scope-Hierarchy.md)
+- [Including The Current And Target Scopes in The Event Object](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Including-The-Current-And-Target-Scopes-in-The-Event-Object.md)
+- [Stopping Event Propagation](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Stopping-Event-Propagation.md)
+- [Preventing Default Event Behavior](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Preventing-Default-Event-Behavior.md)
+- [Broadcasting Scope Removal](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Broadcasting-Scope-Removal.md)
+- [Disabling Listeners On Destroyed Scopes](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Disabling-Listeners-On-Destroyed-Scopes.md)
+- [Handling Exceptions](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter5/Handling-Exceptions.md)
+- Summary
