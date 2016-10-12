@@ -163,4 +163,47 @@ var STRIP_COMMENTS = /(\/\/.*$)|(\/\*.*?\*\/)/mg;
 
 这个正则表达式可以处理参数列表中所有类型注释!
 
-The final feature we need to take care of when parsing argument names is stripping surrounding underscore characters from them. Angular lets you put an underscore character on both sides of an argument name, which it will then ignore, so that the following pattern of capturing an injected argument to a local variable with the same name is possible:
+最后的特性我们需要删除参数名称两边的下划线. angular 允许传入一个两边带下划线的参数名称, 它会忽略两边的下划线. 这样就可以注入一个与本地变量名相同的依赖:
+
+```js
+var aVariable;
+injector.invoke(function(_aVariable_) {
+    aVariable = _aVariable_;
+});
+```
+
+所以, 如果一个参数两边被下划线包围, 两边的下划线应该从依赖名称中被删除. 如果参数名称只有一边有下划线, 或者中间有, 下划线不会被删除.
+
+```js
+it('strips surrounding underscores from argument names when parsing', function() {
+    var injector = createInjector([]);
+    var fn = function(a, _b_, c_, _d, an_argument) { };
+    expect(injector.annotate(fn)).toEqual(['a', 'b', 'c_', '_d', 'an_argument']);
+});
+```
+
+删除下划线也是被 FN_ARG 正则表达式处理的, 之前只用它删除空白.
+
+```js
+var FN_ARG = /^\s*(_?)(\S+?)\1\s*$/;
+```
+
+现在, 我们已经添加一个新的捕获组在正则表达式中, 实际的参数名称已经从第二个匹配结果变成第三个匹配结果:
+
+```js
+function annotate(fn) {
+    if (_.isArray(fn)) {
+        return fn.slice(0, fn.length - 1);
+    } else if (fn.$inject) {
+        return fn.$inject;
+    } else if (!fn.length) {
+        return [];
+    } else {
+        var source = fn.toString().replace(STRIP_COMMENTS, '');
+        var argDeclaration = source.match(FN_ARGS);
+        return _.map(argDeclaration[1].split(','), function(argName) {
+            return argName.match(FN_ARG)[2];
+        });
+    }
+}
+```
