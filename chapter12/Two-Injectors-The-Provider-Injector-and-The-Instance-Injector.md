@@ -130,7 +130,7 @@ it('does not give access to providers through get', function() {
 
 让我们重新组织代码去支持两种 injector. 首先, 我们将一步一步介绍代码的变化, 最后列出所有重组后的 createInjector 的源码.
 
-首先, 我们将会在 createInjector 里有一个内部函数用于处理两种内部的 injector. 这个函数有两个参数: 一个是用于查找依赖的 cache, 另一个当 cache 中没有依赖时, 用于回退的工厂方法:
+首先, 我们将会在 createInjector 里有一个内部函数用于处理两种内部的 injector. 这个函数有两个参数: 一个是用于查找依赖的 cache, 另一个是当 cache 中没有依赖时, 用于回调的工厂方法:
 
 ```js
 function createInternalInjector(cache, factoryFn) {
@@ -235,10 +235,78 @@ function createInternalInjector(cache, factoryFn) {
 }
 ```
 
-The has method checks for the existence of a dependency in the local cache as
-well as the provider cache.
-Now that we have createInternalInjector, we can create our two injectors with it. The provider injector works with the provider cache. Its fallback function will throw an exception letting the
-user know the dependency they’re looking for doesn’t exist:
+get, invoke 和 instantiate 方法引用 createInternalInjector 中的函数. annotate 引用 annotate 函数. has 方法检查依赖在本地的 cache 和 providerCache 中是否存在.
 
-get, invoke 和 instantiate 方法引用 createInternalInjector 中的函数. annotate 引用 annotate 函数. has
+现在, 我们拥有 createInternalInjector, 我们可以用它创建两个 injector. provider injector 与 provider cache 工作, 它的回调函数将会返回一个异常, 让用户知道查找的依赖不存在.
 
+```js
+function createInjector(modulesToLoad) {
+    var providerCache = {};
+    var providerInjector = createInternalInjector(providerCache, function() {
+        throw 'Unknown provider: '+path.join(' <- ');
+    });
+    // ...
+}
+```
+
+instance injector 与相应的 instanceCache 工作. 它的回调函数用于查找 provider 并实例化依赖. 这是早先在 getService 中 else 分支的逻辑:
+
+```js
+function createInjector(modulesToLoad) {
+    var providerCache = {};
+    var providerInjector = createInternalInjector(providerCache, function() {
+        throw 'Unknown provider: '+path.join(' <- ');
+    });
+    var instanceCache = {};
+    var instanceInjector = createInternalInjector(instanceCache, function(name) {
+    var provider = providerInjector.get(name + 'Provider');
+        return instanceInjector.invoke(provider.$get, provider);
+    });
+    // ...
+}
+```
+
+注意, 我们从 provider injector 获得 provider, 但是, 我们使用 instance injector 调用它(provider)的 $get 方法. 这是我们如何确保只有实例才能注入 $get 的方式.
+
+现在, 实例化 provider, 我们使用 provider 的 instantiate 方法. 这种方式, provider 只能访问其他 provider
+
+```js
+provider: function(key, provider) {
+    if (_.isFunction(provider)) {
+        provider = providerInjector.instantiate(provider);
+    }
+    providerCache[key + 'Provider'] = provider;
+}
+```
+
+constant 是一种特殊的情况. 我们将它的引用放入 provider cache 和 instance cache 中. 所以 constant 可以在任何地方被注入:
+
+```js
+constant: function(key, value) {
+    if (key === 'hasOwnProperty') {
+        throw 'hasOwnProperty is not a valid constant name!';
+    }
+    providerCache[key] = value;
+    instanceCache[key] = value;
+},
+```
+
+最后, 返回调用 createInjector 的结果:
+
+```js
+function createInjector(modulesToLoad, strictDi) {
+    // ...
+    return instanceInjector;
+}
+```
+
+下面是 createInjector 的完整实现:
+
+```js
+// 暂时省略
+```
+
+我们实现了两种不同阶段的依赖注入:
+
+1. provider 的注入发生在注册时, 之后在 providerCache 中不会再有任何改变.
+2. instance 的注入发生在运行时, 当某人调用 injector 的外部 API. instanceCache 会被实例化的依赖填充, 实例化发生在 instanceInjector 的回调函数中.
