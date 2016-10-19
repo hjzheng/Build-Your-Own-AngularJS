@@ -93,3 +93,15 @@ chapter 11
 - [Integrating Annotation with Invocation](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter11/Integrating-Annotation-with-Invocation.md)
 - [Instantiating Objects with Dependency Injection](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter11/Instantiating-Objects-with-Dependency-Injection.md)
 - Summary
+
+chapter 12
+
+- [The Simplest Possible Provider: An Object with A $get Method](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/The%20Simplest-Possible-Provider-An-Object-with-A-%24get-Method.md)
+- [Injecting Dependencies To The $get Method](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Injecting-Dependencies-To-The-%24get-Method.md)
+- [Lazy Instantiation of Dependencies](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Lazy-Instantiation-of-Dependencies.md)
+- [Making Sure Everything Is A Singleton](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Making-Sure-Everything-Is-A-Singleton.md)
+- [Circular Dependencies](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Circular-Dependencies.md)
+- [Provider Constructors](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Provider-Constructors.md)
+- [Two Injectors: The Provider Injector and The Instance Injector](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Two-Injectors-The-Provider-Injector-and-The-Instance-Injector.md)
+- [Unshifting Constants in The Invoke Queue](https://github.com/hjzheng/Build-Your-Own-AngularJS/blob/master/chapter12/Unshifting-Constants-in-The-Invoke-Queue.md)
+- Summary
